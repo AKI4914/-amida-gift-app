@@ -1,0 +1,17 @@
+{
+  "name": "amida-gift-app",
+  "version": "1.0.0",
+  "description": "LINE LIFF + 阿弥陀経なぞりアプリ + Amazonギフト自動付与システム",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.3.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "@line/bot-sdk": "^9.5.1"
+  }
+}
