@@ -42,7 +42,7 @@ const lineClient = new line.Client(lineConfig);
 // ---------------------------------------------------------
 // DB初期化
 // ---------------------------------------------------------
-const db = new Database(path.join(__dirname, 'app.db'));
+const db = new Database('/var/data/app.db');
 db.pragma('journal_mode = WAL');
 
 db.exec(`
