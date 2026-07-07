@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<title>阿弥陀くじ</title>
+<title>あみだくじ</title>
 <style>
   :root{
     --paper: #F6F1E4;
@@ -168,7 +168,7 @@
 <body>
 
   <div class="eyebrow">AMIDA LOTTERY</div>
-  <h1>阿弥陀くじ</h1>
+  <h1>あみだくじ</h1>
   <p class="sub">番号をひとつお選びください。<br>糸をたどった先に、ご縁の印がございます。</p>
 
   <!-- スタート画面 -->
@@ -183,16 +183,18 @@
   <!-- くじ画面 -->
   <div id="ladderScreen">
     <div class="ladder-wrap">
-      <svg id="ladderSvg" viewBox="0 0 600 900" preserveAspectRatio="xMidYMid meet">
+      <svg id="ladderSvg" viewBox="0 0 600 960" preserveAspectRatio="xMidYMid meet">
         <!-- 縦線(はしご) -->
-        <line x1="100" y1="60" x2="100" y2="800" stroke="var(--line)" stroke-width="6" stroke-linecap="round" opacity="0.35"/>
-        <line x1="300" y1="60" x2="300" y2="800" stroke="var(--line)" stroke-width="6" stroke-linecap="round" opacity="0.35"/>
-        <line x1="500" y1="60" x2="500" y2="800" stroke="var(--line)" stroke-width="6" stroke-linecap="round" opacity="0.35"/>
+        <line x1="100" y1="60" x2="100" y2="850" stroke="var(--line)" stroke-width="6" stroke-linecap="round" opacity="0.35"/>
+        <line x1="300" y1="60" x2="300" y2="850" stroke="var(--line)" stroke-width="6" stroke-linecap="round" opacity="0.35"/>
+        <line x1="500" y1="60" x2="500" y2="850" stroke="var(--line)" stroke-width="6" stroke-linecap="round" opacity="0.35"/>
 
-        <!-- 横線(rung) -->
-        <line x1="100" y1="200" x2="300" y2="200" stroke="var(--line)" stroke-width="6" stroke-linecap="round" opacity="0.35"/>
-        <line x1="300" y1="400" x2="500" y2="400" stroke="var(--line)" stroke-width="6" stroke-linecap="round" opacity="0.35"/>
-        <line x1="100" y1="600" x2="300" y2="600" stroke="var(--line)" stroke-width="6" stroke-linecap="round" opacity="0.35"/>
+        <!-- 横線(rung) 5本 -->
+        <line x1="100" y1="180" x2="300" y2="180" stroke="var(--line)" stroke-width="6" stroke-linecap="round" opacity="0.35"/>
+        <line x1="300" y1="320" x2="500" y2="320" stroke="var(--line)" stroke-width="6" stroke-linecap="round" opacity="0.35"/>
+        <line x1="100" y1="460" x2="300" y2="460" stroke="var(--line)" stroke-width="6" stroke-linecap="round" opacity="0.35"/>
+        <line x1="300" y1="600" x2="500" y2="600" stroke="var(--line)" stroke-width="6" stroke-linecap="round" opacity="0.35"/>
+        <line x1="100" y1="740" x2="300" y2="740" stroke="var(--line)" stroke-width="6" stroke-linecap="round" opacity="0.35"/>
 
         <!-- 上部ラベル 1/2/3 -->
         <text x="100" y="40" text-anchor="middle" class="col-label-top">1</text>
@@ -201,16 +203,16 @@
 
         <!-- 下部 行灯(A/B/C) -->
         <g id="lanternA" class="lantern-glow">
-          <rect x="70" y="810" width="60" height="60" rx="10" fill="#fff8e8" stroke="var(--gold)" stroke-width="3"/>
-          <text x="100" y="852" text-anchor="middle" font-family="system-ui" font-weight="700" font-size="26" fill="var(--vermillion)">A</text>
+          <rect x="70" y="860" width="60" height="60" rx="10" fill="#fff8e8" stroke="var(--gold)" stroke-width="3"/>
+          <text x="100" y="902" text-anchor="middle" font-family="system-ui" font-weight="700" font-size="26" fill="var(--vermillion)">A</text>
         </g>
         <g id="lanternB" class="lantern-glow">
-          <rect x="270" y="810" width="60" height="60" rx="10" fill="#fff8e8" stroke="var(--gold)" stroke-width="3"/>
-          <text x="300" y="852" text-anchor="middle" font-family="system-ui" font-weight="700" font-size="26" fill="var(--vermillion)">B</text>
+          <rect x="270" y="860" width="60" height="60" rx="10" fill="#fff8e8" stroke="var(--gold)" stroke-width="3"/>
+          <text x="300" y="902" text-anchor="middle" font-family="system-ui" font-weight="700" font-size="26" fill="var(--vermillion)">B</text>
         </g>
         <g id="lanternC" class="lantern-glow">
-          <rect x="470" y="810" width="60" height="60" rx="10" fill="#fff8e8" stroke="var(--gold)" stroke-width="3"/>
-          <text x="500" y="852" text-anchor="middle" font-family="system-ui" font-weight="700" font-size="26" fill="var(--vermillion)">C</text>
+          <rect x="470" y="860" width="60" height="60" rx="10" fill="#fff8e8" stroke="var(--gold)" stroke-width="3"/>
+          <text x="500" y="902" text-anchor="middle" font-family="system-ui" font-weight="700" font-size="26" fill="var(--vermillion)">C</text>
         </g>
 
         <!-- なぞる光の糸(JSで描画) -->
@@ -230,6 +232,7 @@
     <div id="status"></div>
   </div>
 
+  <!-- BGM: 既存の音声ファイルのパスに合わせてください(元のindex.htmlのsrcをそのまま流用) -->
   <audio id="bgm" src="/public/sutra-audio.mp3" loop preload="auto"></audio>
 
 <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
@@ -241,9 +244,9 @@
   // どの番号を選んでも到達先は異なるが、賞品はすべて同額(10,000円)
   // ------------------------------------------------------------------
   const ROUTES = {
-    1: { tier: 'C', points: [[100,60],[100,200],[300,200],[300,400],[500,400],[500,600],[500,800]] },
-    2: { tier: 'B', points: [[300,60],[300,200],[100,200],[100,400],[100,600],[300,600],[300,800]] },
-    3: { tier: 'A', points: [[500,60],[500,200],[500,400],[300,400],[300,600],[100,600],[100,800]] },
+    1: { tier: 'A', points: [[100,60],[100,180],[300,180],[300,320],[500,320],[500,600],[300,600],[300,740],[100,740],[100,850]] },
+    2: { tier: 'C', points: [[300,60],[300,180],[100,180],[100,460],[300,460],[300,600],[500,600],[500,850]] },
+    3: { tier: 'B', points: [[500,60],[500,320],[300,320],[300,460],[100,460],[100,740],[300,740],[300,850]] },
   };
 
   const startScreen = document.getElementById('startScreen');
@@ -280,12 +283,12 @@
     tracePath.style.strokeDashoffset = totalLength;
     // 強制リフロー
     tracePath.getBoundingClientRect();
-    tracePath.style.transition = `stroke-dashoffset 3.2s cubic-bezier(.4,0,.2,1)`;
+    tracePath.style.transition = `stroke-dashoffset 4.2s cubic-bezier(.4,0,.2,1)`;
     tracePath.style.strokeDashoffset = 0;
 
     traceDot.setAttribute('visibility', 'visible');
     const startTime = performance.now();
-    const duration = 3200;
+    const duration = 4200;
     function moveDot(now){
       const t = Math.min(1, (now - startTime) / duration);
       const len = t * totalLength;
@@ -328,6 +331,8 @@
   }
 
   // ---- サーバーへギフト付与をリクエスト ----
+  // ★重要: '/api/checkpoint' の部分は、server.js内の実際のエンドポイント名(app.postの1つ目の引数)に
+  //         合わせて書き換えてください。( '/webhook' 以外のもう一つの app.post が該当します)
   async function grantGift(tier){
     try {
       const idToken = liff.getIDToken();
@@ -377,4 +382,4 @@
   })();
 </script>
 </body>
-  </html>
+</html>
